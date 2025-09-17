@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "494333074686",
+    "project_id": "flutter-havenote-app",
+    "storage_bucket": "flutter-havenote-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:494333074686:android:3b0aef49ef0ec9eb1c19af",
+        "android_client_info": {
+          "package_name": "com.example.havenote"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAQmiBfLql_WgHszPogE6geUtkjiz-0N4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
