@@ -5,7 +5,7 @@ analyzer:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
     - "**/*.gr.dart"
-    
+    - "lib/firebase_options.dart"
   errors:
     # Make common issues loud
     unused_import: error
