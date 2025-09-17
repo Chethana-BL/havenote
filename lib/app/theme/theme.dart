@@ -87,7 +87,7 @@ class AppTheme {
         ),
       ),
 
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: cs.surface,
         surfaceTintColor: cs.surfaceTint,
         elevation: AppSizes.elevation,
