@@ -55,5 +55,20 @@ class FirebaseAuthRepository implements IAuthRepository {
   }
 
   @override
+  Future<void> deleteAccount() async {
+    final user = _auth.currentUser;
+    if (user == null) return;
+    await user.delete();
+  }
+
+  @override
+  Future<void> reauthenticateWithEmail(String email, String password) async {
+    final user = _auth.currentUser;
+    if (user == null) return;
+    final cred = EmailAuthProvider.credential(email: email, password: password);
+    await user.reauthenticateWithCredential(cred);
+  }
+
+  @override
   Future<void> signOut() => _auth.signOut();
 }

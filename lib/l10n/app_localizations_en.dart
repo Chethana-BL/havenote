@@ -21,6 +21,21 @@ class SEn extends S {
   String get actionLogout => 'Sign Out';
 
   @override
+  String get actionOk => 'OK';
+
+  @override
+  String get actionSave => 'Save';
+
+  @override
+  String get actionSaved => 'Saved';
+
+  @override
+  String get actionCancel => 'Cancel';
+
+  @override
+  String get actionDelete => 'Delete';
+
+  @override
   String get actionShow => 'Show';
 
   @override
@@ -164,4 +179,46 @@ class SEn extends S {
     );
     return 'Please wait $_temp0 before resending';
   }
+
+  @override
+  String get settingsTitle => 'Settings';
+
+  @override
+  String get settingsSignOutConfirmTitle => 'Sign out?';
+
+  @override
+  String get settingsSignOutConfirmBody => 'You will need to sign in again to access your notes.';
+
+  @override
+  String get settingsDeleteAccount => 'Delete account';
+
+  @override
+  String get settingsDeleteAccountSubtitle => 'Deletes your account and all notes';
+
+  @override
+  String get settingsDeleteConfirmTitle => 'Delete account?';
+
+  @override
+  String get settingsDeleteConfirmBody => 'This will permanently delete your account and all notes, including images. This action cannot be undone.';
+
+  @override
+  String get settingsDeleteSuccess => 'Your account has been deleted.';
+
+  @override
+  String get settingsDeleteRequiresReauthentication => 'Please reauthenticate and try again (sign out, sign in, then delete).';
+
+  @override
+  String get authReauthTitle => 'Reauthenticate';
+
+  @override
+  String get authReauthSubtitle => 'For your security, please confirm your password.';
+
+  @override
+  String get authReauthConfirm => 'Confirm';
+
+  @override
+  String get authReauthSuccess => 'Reauthenticated';
+
+  @override
+  String get authReauthNeeded => 'Please reauthenticate to continue.';
 }

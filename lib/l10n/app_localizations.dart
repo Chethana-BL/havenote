@@ -119,6 +119,36 @@ abstract class S {
   /// **'Sign Out'**
   String get actionLogout;
 
+  /// No description provided for @actionOk.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get actionOk;
+
+  /// No description provided for @actionSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get actionSave;
+
+  /// No description provided for @actionSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get actionSaved;
+
+  /// No description provided for @actionCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get actionCancel;
+
+  /// No description provided for @actionDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get actionDelete;
+
   /// No description provided for @actionShow.
   ///
   /// In en, this message translates to:
@@ -388,6 +418,90 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Please wait {secs, plural, one {1 second} other {{secs} seconds}} before resending'**
   String authVerifyWait(num secs);
+
+  /// No description provided for @settingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settingsTitle;
+
+  /// No description provided for @settingsSignOutConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out?'**
+  String get settingsSignOutConfirmTitle;
+
+  /// No description provided for @settingsSignOutConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You will need to sign in again to access your notes.'**
+  String get settingsSignOutConfirmBody;
+
+  /// No description provided for @settingsDeleteAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account'**
+  String get settingsDeleteAccount;
+
+  /// No description provided for @settingsDeleteAccountSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Deletes your account and all notes'**
+  String get settingsDeleteAccountSubtitle;
+
+  /// No description provided for @settingsDeleteConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account?'**
+  String get settingsDeleteConfirmTitle;
+
+  /// No description provided for @settingsDeleteConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This will permanently delete your account and all notes, including images. This action cannot be undone.'**
+  String get settingsDeleteConfirmBody;
+
+  /// No description provided for @settingsDeleteSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Your account has been deleted.'**
+  String get settingsDeleteSuccess;
+
+  /// No description provided for @settingsDeleteRequiresReauthentication.
+  ///
+  /// In en, this message translates to:
+  /// **'Please reauthenticate and try again (sign out, sign in, then delete).'**
+  String get settingsDeleteRequiresReauthentication;
+
+  /// No description provided for @authReauthTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reauthenticate'**
+  String get authReauthTitle;
+
+  /// No description provided for @authReauthSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'For your security, please confirm your password.'**
+  String get authReauthSubtitle;
+
+  /// No description provided for @authReauthConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get authReauthConfirm;
+
+  /// No description provided for @authReauthSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Reauthenticated'**
+  String get authReauthSuccess;
+
+  /// No description provided for @authReauthNeeded.
+  ///
+  /// In en, this message translates to:
+  /// **'Please reauthenticate to continue.'**
+  String get authReauthNeeded;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

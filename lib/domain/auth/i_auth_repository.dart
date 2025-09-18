@@ -27,6 +27,12 @@ abstract class IAuthRepository {
   /// Optionally triggers a token refresh for routers listening to idTokenChanges.
   Future<bool> refreshEmailVerification();
 
+  /// Deletes the current user. Caller must ensure recent login (reauthenticate).
+  Future<void> deleteAccount();
+
+  /// Reauthenticates the current user (required before sensitive actions like delete).
+  Future<void> reauthenticateWithEmail(String email, String password);
+
   /// Signs out the current user.
   Future<void> signOut();
 }

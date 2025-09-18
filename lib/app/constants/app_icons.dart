@@ -24,4 +24,7 @@ class AppIcons {
 
   // UI / Misc
   static const circle = Icons.circle;
+  static const settings = Icons.settings;
+  static const delete = Icons.delete_outline;
+  static const deleteFilled = Icons.delete;
 }

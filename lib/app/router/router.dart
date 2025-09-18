@@ -8,10 +8,12 @@ import 'package:go_router/go_router.dart';
 import 'package:havenote/app/router/routes.dart';
 import 'package:havenote/core/logger.dart';
 import 'package:havenote/features/auth/presentation/forgot_password_screen.dart';
+import 'package:havenote/features/auth/presentation/reauth_screen.dart';
 import 'package:havenote/features/auth/presentation/sign_in_screen.dart';
 import 'package:havenote/features/auth/presentation/sign_up_screen.dart';
 import 'package:havenote/features/auth/presentation/verify_email_screen.dart';
 import 'package:havenote/features/home/presentation/home_screen.dart';
+import 'package:havenote/features/settings/presentation/settings_screen.dart';
 import 'package:havenote/features/splash/presentation/splash_screen.dart';
 
 /// [ChangeNotifier] wrapper around a [Stream].
@@ -80,6 +82,16 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: AppRoutePath.home,
         builder: (_, __) => const HomeScreen(),
       ),
+      GoRoute(
+        name: AppRouteName.settings,
+        path: AppRoutePath.settings,
+        builder: (_, __) => const SettingsScreen(),
+      ),
+      GoRoute(
+        name: AppRouteName.reauth,
+        path: AppRoutePath.reauth,
+        builder: (_, __) => const ReauthScreen(),
+      ),
     ],
 
     redirect: (context, state) async {
@@ -89,6 +101,7 @@ final routerProvider = Provider<GoRouter>((ref) {
 
       final inAuthFlow = location.startsWith(AppRoutePath.auth);
       final atVerify = location == AppRoutePath.verifyEmail;
+      final atReauth = location == AppRoutePath.reauth;
       final atSplash = location == AppRoutePath.splash;
 
       // Not signed in → allow /auth/* and /splash; otherwise go to /auth.
@@ -98,14 +111,14 @@ final routerProvider = Provider<GoRouter>((ref) {
         return AppRoutePath.auth;
       }
 
-      // Signed in but not email-verified → force /verify-email (splash)
-      if (!user.emailVerified && !atVerify && !atSplash) {
+      // Signed in but not email-verified → force /verify-email (allow reauth & splash)
+      if (!user.emailVerified && !atVerify && !atReauth && !atSplash) {
         Log.i('GoRouter: redirect → /verify-email (unverified)');
         return AppRoutePath.verifyEmail;
       }
 
-      // Signed in & verified → block navigating into /auth/*
-      if (inAuthFlow && user.emailVerified) {
+      // Signed in & verified → block navigating into /auth/* (except /reauth) → /home
+      if (inAuthFlow && user.emailVerified && !atReauth) {
         Log.i('GoRouter: redirect → /home (already authenticated)');
         return AppRoutePath.home;
       }
