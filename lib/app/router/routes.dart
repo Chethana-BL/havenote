@@ -7,7 +7,9 @@ abstract class AppRouteName {
   static const signUp = 'signup';
   static const verifyEmail = 'verifyemail';
   static const forgotPassword = 'forgotpassword';
+  static const reauth = 'reauth';
   static const home = 'home';
+  static const settings = 'settings';
 }
 
 /// Route path patterns
@@ -17,7 +19,9 @@ abstract class AppRoutePath {
   static const signUp = '/auth/sign-up';
   static const verifyEmail = '/auth/verify-email';
   static const forgotPassword = '/auth/forgot-password';
+  static const reauth = '/auth/reauth';
   static const home = '/home';
+  static const settings = '/settings';
 }
 
 /// Helper to build route paths with parameters.
@@ -29,5 +33,7 @@ abstract class AppRoute {
   static String signUp() => AppRoutePath.signUp;
   static String verifyEmail() => AppRoutePath.verifyEmail;
   static String forgotPassword() => AppRoutePath.forgotPassword;
+  static String reauth() => AppRoutePath.reauth;
   static String home() => AppRoutePath.home;
+  static String settings() => AppRoutePath.settings;
 }

@@ -4,6 +4,11 @@
   "actionSignIn": "Sign In",
   "actionSignUp": "Sign Up",
   "actionLogout": "Sign Out",
+  "actionOk": "OK",
+  "actionSave": "Save",
+  "actionSaved": "Saved",
+  "actionCancel": "Cancel",
+  "actionDelete": "Delete",
   "actionShow": "Show",
   "actionHide": "Hide",
   "labelEmail": "Email",
@@ -48,7 +53,21 @@
   "authVerifyResent": "Verification email sent",
   "authVerifyChecking": "Checking…",
   "authVerifyNotVerified": "Not verified yet. Check your inbox.",
-  "authVerifyWait": "Please wait {secs, plural, one {1 second} other {{secs} seconds}} before resending"
+  "authVerifyWait": "Please wait {secs, plural, one {1 second} other {{secs} seconds}} before resending",
+  "settingsTitle": "Settings",
+  "settingsSignOutConfirmTitle": "Sign out?",
+  "settingsSignOutConfirmBody": "You will need to sign in again to access your notes.",
+  "settingsDeleteAccount": "Delete account",
+  "settingsDeleteAccountSubtitle": "Deletes your account and all notes",
+  "settingsDeleteConfirmTitle": "Delete account?",
+  "settingsDeleteConfirmBody": "This will permanently delete your account and all notes, including images. This action cannot be undone.",
+  "settingsDeleteSuccess": "Your account has been deleted.",
+  "settingsDeleteRequiresReauthentication":"Please reauthenticate and try again (sign out, sign in, then delete).",
+  "authReauthTitle": "Reauthenticate",
+  "authReauthSubtitle": "For your security, please confirm your password.",
+  "authReauthConfirm": "Confirm",
+  "authReauthSuccess": "Reauthenticated",
+  "authReauthNeeded": "Please reauthenticate to continue."
 }
 
   

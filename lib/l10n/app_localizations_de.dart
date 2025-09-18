@@ -21,6 +21,21 @@ class SDe extends S {
   String get actionLogout => 'Abmelden';
 
   @override
+  String get actionOk => 'OK';
+
+  @override
+  String get actionSave => 'Speichern';
+
+  @override
+  String get actionSaved => 'Gespeichert';
+
+  @override
+  String get actionCancel => 'Abbrechen';
+
+  @override
+  String get actionDelete => 'Löschen';
+
+  @override
   String get actionShow => 'Anzeigen';
 
   @override
@@ -164,4 +179,46 @@ class SDe extends S {
     );
     return 'Bitte $_temp0 warten, bevor Sie erneut senden';
   }
+
+  @override
+  String get settingsTitle => 'Einstellungen';
+
+  @override
+  String get settingsSignOutConfirmTitle => 'Abmelden?';
+
+  @override
+  String get settingsSignOutConfirmBody => 'Sie müssen sich erneut anmelden, um auf Ihre Notizen zuzugreifen.';
+
+  @override
+  String get settingsDeleteAccount => 'Konto löschen';
+
+  @override
+  String get settingsDeleteAccountSubtitle => 'Löscht Ihr Konto und alle Notizen';
+
+  @override
+  String get settingsDeleteConfirmTitle => 'Konto löschen?';
+
+  @override
+  String get settingsDeleteConfirmBody => 'Dadurch werden Ihr Konto und alle Notizen, einschließlich der Bilder, dauerhaft gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.';
+
+  @override
+  String get settingsDeleteSuccess => 'Ihr Konto wurde gelöscht.';
+
+  @override
+  String get settingsDeleteRequiresReauthentication => 'Bitte authentifizieren Sie sich erneut und versuchen Sie es noch einmal (abmelden, erneut anmelden, dann löschen).';
+
+  @override
+  String get authReauthTitle => 'Erneut authentifizieren';
+
+  @override
+  String get authReauthSubtitle => 'Zu Ihrer Sicherheit bestätigen Sie bitte Ihr Passwort.';
+
+  @override
+  String get authReauthConfirm => 'Bestätigen';
+
+  @override
+  String get authReauthSuccess => 'Erneut authentifiziert';
+
+  @override
+  String get authReauthNeeded => 'Bitte authentifizieren Sie sich erneut, um fortzufahren.';
 }
