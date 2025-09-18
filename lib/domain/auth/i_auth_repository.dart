@@ -35,4 +35,7 @@ abstract class IAuthRepository {
 
   /// Signs out the current user.
   Future<void> signOut();
+
+  /// Updates the display name of the current user.
+  Future<void> updateDisplayName(String displayName);
 }
