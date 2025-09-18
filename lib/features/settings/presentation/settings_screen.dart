@@ -9,6 +9,7 @@ import 'package:havenote/app/utils/dialogs.dart';
 import 'package:havenote/core/logger.dart';
 import 'package:havenote/features/auth/state/auth_providers.dart';
 import 'package:havenote/features/auth/utils/auth_error_mapper.dart';
+import 'package:havenote/features/settings/presentation/widgets/theme_mode_tile.dart';
 import 'package:havenote/l10n/app_localizations.dart';
 
 class SettingsScreen extends ConsumerStatefulWidget {
@@ -86,6 +87,9 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       body: ListView(
         padding: const EdgeInsets.all(AppSizes.padding),
         children: [
+          // Theme Mode
+          const ThemeModeTile(),
+          const Divider(),
           // Sign out (with confirmation)
           ListTile(
             leading: const Icon(AppIcons.logout),

@@ -425,6 +425,36 @@ abstract class S {
   /// **'Settings'**
   String get settingsTitle;
 
+  /// No description provided for @settingsTheme.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get settingsTheme;
+
+  /// No description provided for @settingsThemeSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'System'**
+  String get settingsThemeSystem;
+
+  /// No description provided for @settingsThemeLight.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get settingsThemeLight;
+
+  /// No description provided for @settingsThemeDark.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get settingsThemeDark;
+
+  /// No description provided for @settingsDisplayName.
+  ///
+  /// In en, this message translates to:
+  /// **'Display name'**
+  String get settingsDisplayName;
+
   /// No description provided for @settingsSignOutConfirmTitle.
   ///
   /// In en, this message translates to:
