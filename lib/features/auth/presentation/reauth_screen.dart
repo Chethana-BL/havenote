@@ -1,15 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-
 import 'package:havenote/app/constants/app_icons.dart';
 import 'package:havenote/app/constants/app_sizes.dart';
 import 'package:havenote/core/logger.dart';
 import 'package:havenote/features/auth/presentation/widgets/auth_widgets.dart';
 import 'package:havenote/features/auth/state/auth_providers.dart';
 import 'package:havenote/features/auth/utils/auth_error_mapper.dart';
-import 'package:havenote/l10n/app_localizations.dart';
 
 class ReauthScreen extends ConsumerStatefulWidget {
   const ReauthScreen({super.key});
@@ -136,7 +135,7 @@ class _ReauthScreenState extends ConsumerState<ReauthScreen> {
                 AuthSubmitButton(
                   loading: _loading,
                   icon: AppIcons.check,
-                  label: t.authReauthConfirm,
+                  label: t.actionConfirm,
                   onPressed: _submit,
                 ),
 

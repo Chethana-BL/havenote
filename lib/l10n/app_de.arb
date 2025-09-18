@@ -9,6 +9,7 @@
   "actionSaved": "Gespeichert",
   "actionCancel": "Abbrechen",
   "actionDelete": "Löschen",
+  "actionConfirm": "Bestätigen",
   "actionShow": "Anzeigen",
   "actionHide": "Ausblenden",
   "labelEmail": "E-Mail",
@@ -67,10 +68,6 @@
   "settingsDeleteConfirmTitle": "Konto löschen?",
   "settingsDeleteConfirmBody": "Dadurch werden Ihr Konto und alle Notizen, einschließlich der Bilder, dauerhaft gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.",
   "settingsDeleteSuccess": "Ihr Konto wurde gelöscht.",
-  "settingsDeleteRequiresReauthentication": "Bitte authentifizieren Sie sich erneut und versuchen Sie es noch einmal (abmelden, erneut anmelden, dann löschen).",
   "authReauthTitle": "Erneut authentifizieren",
-  "authReauthSubtitle": "Zu Ihrer Sicherheit bestätigen Sie bitte Ihr Passwort.",
-  "authReauthConfirm": "Bestätigen",
-  "authReauthSuccess": "Erneut authentifiziert",
-  "authReauthNeeded": "Bitte authentifizieren Sie sich erneut, um fortzufahren."
+  "authReauthSubtitle": "Zu Ihrer Sicherheit bestätigen Sie bitte Ihr Passwort."
 }
