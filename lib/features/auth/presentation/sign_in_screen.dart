@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:havenote/app/constants/app_icons.dart';
@@ -9,6 +8,7 @@ import 'package:havenote/core/logger.dart';
 import 'package:havenote/features/auth/presentation/widgets/auth_widgets.dart';
 import 'package:havenote/features/auth/state/auth_providers.dart';
 import 'package:havenote/features/auth/utils/auth_error_mapper.dart';
+import 'package:havenote/l10n/app_localizations.dart';
 
 class SignInScreen extends ConsumerStatefulWidget {
   const SignInScreen({super.key});
