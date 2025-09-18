@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:havenote/app/theme/theme_mode_provider.dart';
 import 'package:havenote/core/logger.dart';
-import 'package:havenote/l10n/app_localizations.dart';
 
 class ThemeModeTile extends ConsumerWidget {
   const ThemeModeTile({super.key});

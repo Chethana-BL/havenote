@@ -9,6 +9,7 @@
   "actionSaved": "Saved",
   "actionCancel": "Cancel",
   "actionDelete": "Delete",
+  "actionConfirm": "Confirm",
   "actionShow": "Show",
   "actionHide": "Hide",
   "labelEmail": "Email",
@@ -67,12 +68,8 @@
   "settingsDeleteConfirmTitle": "Delete account?",
   "settingsDeleteConfirmBody": "This will permanently delete your account and all notes, including images. This action cannot be undone.",
   "settingsDeleteSuccess": "Your account has been deleted.",
-  "settingsDeleteRequiresReauthentication":"Please reauthenticate and try again (sign out, sign in, then delete).",
   "authReauthTitle": "Reauthenticate",
-  "authReauthSubtitle": "For your security, please confirm your password.",
-  "authReauthConfirm": "Confirm",
-  "authReauthSuccess": "Reauthenticated",
-  "authReauthNeeded": "Please reauthenticate to continue."
+  "authReauthSubtitle": "For your security, please confirm your password."
 }
 
   
