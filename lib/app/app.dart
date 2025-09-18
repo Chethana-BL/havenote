@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:havenote/app/router/router.dart';
 import 'package:havenote/app/theme/theme.dart';
+import 'package:havenote/app/theme/theme_mode_provider.dart';
 import 'package:havenote/l10n/app_localizations.dart';
 
 class HavenoteApp extends ConsumerWidget {
@@ -11,6 +12,7 @@ class HavenoteApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(routerProvider);
+    final mode = ref.watch(themeModeProvider);
 
     return MaterialApp.router(
       title: 'Havenote',
@@ -24,7 +26,7 @@ class HavenoteApp extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
-      themeMode: ThemeMode.system,
+      themeMode: mode,
       routerConfig: router,
     );
   }

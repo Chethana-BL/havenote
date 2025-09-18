@@ -184,6 +184,21 @@ class SDe extends S {
   String get settingsTitle => 'Einstellungen';
 
   @override
+  String get settingsTheme => 'Design';
+
+  @override
+  String get settingsThemeSystem => 'System';
+
+  @override
+  String get settingsThemeLight => 'Hell';
+
+  @override
+  String get settingsThemeDark => 'Dunkel';
+
+  @override
+  String get settingsDisplayName => 'Anzeigename';
+
+  @override
   String get settingsSignOutConfirmTitle => 'Abmelden?';
 
   @override

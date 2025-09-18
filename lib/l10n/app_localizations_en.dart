@@ -184,6 +184,21 @@ class SEn extends S {
   String get settingsTitle => 'Settings';
 
   @override
+  String get settingsTheme => 'Theme';
+
+  @override
+  String get settingsThemeSystem => 'System';
+
+  @override
+  String get settingsThemeLight => 'Light';
+
+  @override
+  String get settingsThemeDark => 'Dark';
+
+  @override
+  String get settingsDisplayName => 'Display name';
+
+  @override
   String get settingsSignOutConfirmTitle => 'Sign out?';
 
   @override
