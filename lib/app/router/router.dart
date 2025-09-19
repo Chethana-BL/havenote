@@ -12,6 +12,7 @@ import 'package:havenote/features/auth/presentation/reauth_screen.dart';
 import 'package:havenote/features/auth/presentation/sign_in_screen.dart';
 import 'package:havenote/features/auth/presentation/sign_up_screen.dart';
 import 'package:havenote/features/auth/presentation/verify_email_screen.dart';
+import 'package:havenote/features/editor/presentation/editor_screen.dart';
 import 'package:havenote/features/home/presentation/home_screen.dart';
 import 'package:havenote/features/settings/presentation/settings_screen.dart';
 import 'package:havenote/features/splash/presentation/splash_screen.dart';
@@ -91,6 +92,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         name: AppRouteName.reauth,
         path: AppRoutePath.reauth,
         builder: (_, __) => const ReauthScreen(),
+      ),
+      GoRoute(
+        name: AppRouteName.editor,
+        path: AppRoutePath.editor,
+        builder: (_, __) => const EditorScreen(),
       ),
     ],
 

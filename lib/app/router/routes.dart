@@ -9,6 +9,7 @@ abstract class AppRouteName {
   static const forgotPassword = 'forgotpassword';
   static const reauth = 'reauth';
   static const home = 'home';
+  static const editor = 'editor';
   static const settings = 'settings';
 }
 
@@ -21,6 +22,7 @@ abstract class AppRoutePath {
   static const forgotPassword = '/auth/forgot-password';
   static const reauth = '/auth/reauth';
   static const home = '/home';
+  static const editor = '/editor';
   static const settings = '/settings';
 }
 
@@ -36,4 +38,7 @@ abstract class AppRoute {
   static String reauth() => AppRoutePath.reauth;
   static String home() => AppRoutePath.home;
   static String settings() => AppRoutePath.settings;
+
+  /// New note (create)
+  static String editorNew() => AppRoutePath.editor;
 }

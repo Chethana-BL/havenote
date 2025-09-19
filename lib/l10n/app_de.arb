@@ -69,5 +69,14 @@
   "settingsDeleteConfirmBody": "Dadurch werden Ihr Konto und alle Notizen, einschließlich der Bilder, dauerhaft gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.",
   "settingsDeleteSuccess": "Ihr Konto wurde gelöscht.",
   "authReauthTitle": "Erneut authentifizieren",
-  "authReauthSubtitle": "Zu Ihrer Sicherheit bestätigen Sie bitte Ihr Passwort."
+  "authReauthSubtitle": "Zu Ihrer Sicherheit bestätigen Sie bitte Ihr Passwort.",
+  "emptyHomeTitle": "Beginnen Sie mit Ihrer ersten Notiz",
+  "emptyHomeBody": "Tippen Sie auf die Plus-Schaltfläche, um einen Tagebucheintrag hinzuzufügen.",
+  "labelTitle": "Titel",
+  "labelBody": "Was beschäftigt Sie gerade?",
+  "labelMood": "Stimmung",
+  "labelTag": "Tag hinzufügen",
+  "labelNewEntry": "Neuer Eintrag",
+  "labelEditEntry": "Eintrag bearbeiten",
+  "labelUntitled": "Ohne Titel"
 }

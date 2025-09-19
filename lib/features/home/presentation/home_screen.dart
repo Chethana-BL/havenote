@@ -4,71 +4,50 @@ import 'package:go_router/go_router.dart';
 import 'package:havenote/app/constants/app_icons.dart';
 import 'package:havenote/app/constants/app_sizes.dart';
 import 'package:havenote/app/router/routes.dart';
-import 'package:havenote/features/auth/state/auth_providers.dart';
+import 'package:havenote/features/entries/presentation/widgets/entry_card.dart';
+import 'package:havenote/features/entries/state/entries_providers.dart';
+import 'package:havenote/features/home/presentation/widgets/empty_states.dart';
+import 'package:havenote/l10n/app_localizations.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final cs = Theme.of(context).colorScheme;
-    final user = ref.watch(currentUserProvider);
-    final email = user?.email;
+    final t = S.of(context);
+    final entriesAsync = ref.watch(entriesStreamProvider);
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Welcome'),
+        title: Text(t.appTitle),
         actions: [
           IconButton(
             icon: const Icon(AppIcons.settings),
             onPressed: () => context.push(AppRoute.settings()),
           ),
         ],
-        centerTitle: true,
       ),
-      body: SafeArea(
-        child: Center(
-          child: Padding(
+      body: entriesAsync.when(
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (e, _) => Center(child: Text('${t.errorGeneric}: $e')),
+        data: (entries) {
+          if (entries.isEmpty) {
+            return const EmptyHomeState();
+          }
+          return ListView.separated(
             padding: const EdgeInsets.all(AppSizes.padding),
-            child: Card(
-              elevation: AppSizes.elevation,
-
-              child: Padding(
-                padding: const EdgeInsets.all(AppSizes.paddingLG),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    CircleAvatar(
-                      radius: 32,
-                      backgroundColor: cs.primaryContainer,
-                      child: Icon(
-                        AppIcons.check,
-                        color: cs.onPrimaryContainer,
-                        size: 32,
-                      ),
-                    ),
-                    const SizedBox(height: AppSizes.space),
-                    Text(
-                      'You’re in',
-                      style: Theme.of(context).textTheme.headlineSmall,
-                      textAlign: TextAlign.center,
-                    ),
-                    if (email != null) ...[
-                      const SizedBox(height: AppSizes.spaceXS),
-                      Text('Signed in as $email'),
-                    ],
-
-                    Chip(
-                      label: const Text('Coming soon'),
-                      side: BorderSide(color: cs.outlineVariant),
-                      backgroundColor: cs.surfaceContainerHighest,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
+            itemCount: entries.length,
+            separatorBuilder: (_, __) => const SizedBox(height: AppSizes.space),
+            itemBuilder: (_, i) {
+              final entry = entries[i];
+              return EntryCard(entry: entry);
+            },
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => context.push(AppRoute.editorNew()),
+        child: const Icon(AppIcons.add, size: AppSizes.icon),
       ),
     );
   }
