@@ -18,6 +18,7 @@ class AppIcons {
 
   // Notes
   static const note = Icons.menu_book_rounded;
+  static const edit = Icons.edit;
 
   // Media
   static const image = Icons.image_outlined;

@@ -21,10 +21,7 @@ class FirestoreEntriesRepository implements IEntriesRepository {
   @override
   Stream<List<Entry>> watchEntries() {
     final q = _entriesCollection().orderBy('createdAt', descending: true);
-    return q.snapshots().map((s) {
-      final list = s.docs.map(Entry.fromDoc).toList();
-      return list;
-    });
+    return q.snapshots().map((s) => s.docs.map(Entry.fromDoc).toList());
   }
 
   /// Stream of a single entry by id (nullable if the doc is missing/deleted).

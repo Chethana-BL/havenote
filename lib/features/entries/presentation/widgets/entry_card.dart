@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:havenote/app/constants/app_sizes.dart';
+import 'package:havenote/app/router/routes.dart';
 import 'package:havenote/domain/entries/models/entry.dart';
 
 class EntryCard extends StatelessWidget {
@@ -9,9 +11,7 @@ class EntryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        // TODO(Owner): Navigate to entry details screen (not implemented yet)
-      },
+      onTap: () => context.push(AppRoute.entry(entry.id)),
       child: Card(
         margin: EdgeInsets.zero,
         child: Padding(

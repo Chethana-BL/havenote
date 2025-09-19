@@ -13,6 +13,7 @@ import 'package:havenote/features/auth/presentation/sign_in_screen.dart';
 import 'package:havenote/features/auth/presentation/sign_up_screen.dart';
 import 'package:havenote/features/auth/presentation/verify_email_screen.dart';
 import 'package:havenote/features/editor/presentation/editor_screen.dart';
+import 'package:havenote/features/entry_detail/presentation/entry_detail_screen.dart';
 import 'package:havenote/features/home/presentation/home_screen.dart';
 import 'package:havenote/features/settings/presentation/settings_screen.dart';
 import 'package:havenote/features/splash/presentation/splash_screen.dart';
@@ -97,6 +98,20 @@ final routerProvider = Provider<GoRouter>((ref) {
         name: AppRouteName.editor,
         path: AppRoutePath.editor,
         builder: (_, __) => const EditorScreen(),
+      ),
+      GoRoute(
+        // edit (with :id)
+        name: '${AppRouteName.editor}-id',
+        path: AppRoutePath.editorId,
+        builder:
+            (_, state) => EditorScreen(entryId: state.pathParameters['id']!),
+      ),
+      GoRoute(
+        name: AppRouteName.entry,
+        path: AppRoutePath.entry,
+        builder:
+            (_, state) =>
+                EntryDetailScreen(entryId: state.pathParameters['id']!),
       ),
     ],
 

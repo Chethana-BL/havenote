@@ -78,7 +78,7 @@
   "labelTag": "Add tag",
   "labelNewEntry" : "New Entry",
   "labelEditEntry" : "Edit Entry",
-  "labelUntitled" : "Untitled"
+  "labelUntitled" : "Untitled",
+  "labelEntry": "Entry",
+  "tooltipEdit": "Edit"
 }
-
-  

@@ -78,5 +78,7 @@
   "labelTag": "Tag hinzufügen",
   "labelNewEntry": "Neuer Eintrag",
   "labelEditEntry": "Eintrag bearbeiten",
-  "labelUntitled": "Ohne Titel"
+  "labelUntitled": "Ohne Titel",
+  "labelEntry": "Eintrag",
+  "tooltipEdit": "Bearbeiten"
 }
