@@ -9,7 +9,8 @@ abstract class AppRouteName {
   static const forgotPassword = 'forgotpassword';
   static const reauth = 'reauth';
   static const home = 'home';
-  static const editor = 'editor';
+  static const editor = 'editor'; // create + edit (with :id)
+  static const entry = 'entry';
   static const settings = 'settings';
 }
 
@@ -23,7 +24,12 @@ abstract class AppRoutePath {
   static const reauth = '/auth/reauth';
   static const home = '/home';
   static const editor = '/editor';
+  static const editorId = '/editor/:id';
+  static const entry = '/entry/:id';
   static const settings = '/settings';
+
+  /// Path parameter keys
+  static const paramId = 'id';
 }
 
 /// Helper to build route paths with parameters.
@@ -41,4 +47,16 @@ abstract class AppRoute {
 
   /// New note (create)
   static String editorNew() => AppRoutePath.editor;
+
+  /// Edit note (edit)
+  static String editorEdit(String id) => AppRoutePath.editorId.replaceFirst(
+    ':${AppRoutePath.paramId}',
+    Uri.encodeComponent(id),
+  );
+
+  /// Entry detail view
+  static String entry(String id) => AppRoutePath.entry.replaceFirst(
+    ':${AppRoutePath.paramId}',
+    Uri.encodeComponent(id),
+  );
 }
