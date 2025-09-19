@@ -69,7 +69,16 @@
   "settingsDeleteConfirmBody": "This will permanently delete your account and all notes, including images. This action cannot be undone.",
   "settingsDeleteSuccess": "Your account has been deleted.",
   "authReauthTitle": "Reauthenticate",
-  "authReauthSubtitle": "For your security, please confirm your password."
+  "authReauthSubtitle": "For your security, please confirm your password.",
+  "emptyHomeTitle": "Start your first note",
+  "emptyHomeBody": "Tap the + button to add a journal entry.",
+  "labelTitle": "Title",
+  "labelBody": "What’s on your mind?",
+  "labelMood": "Mood",
+  "labelTag": "Add tag",
+  "labelNewEntry" : "New Entry",
+  "labelEditEntry" : "Edit Entry",
+  "labelUntitled" : "Untitled"
 }
 
   

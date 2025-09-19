@@ -17,12 +17,13 @@ class AppIcons {
   static const search = Icons.search;
 
   // Notes
-  static const check = Icons.check;
+  static const note = Icons.menu_book_rounded;
 
   // Media
   static const image = Icons.image_outlined;
 
   // UI / Misc
+  static const check = Icons.check;
   static const circle = Icons.circle;
   static const settings = Icons.settings;
   static const delete = Icons.delete_outline;
