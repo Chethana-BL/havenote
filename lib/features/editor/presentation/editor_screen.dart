@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:havenote/app/constants/app_icons.dart';
 import 'package:havenote/app/constants/app_sizes.dart';
+import 'package:havenote/features/editor/presentation/widgets/editor_existing_images.dart';
 import 'package:havenote/features/editor/presentation/widgets/editor_fields.dart';
+import 'package:havenote/features/editor/presentation/widgets/editor_images.dart';
 import 'package:havenote/features/editor/state/editor_controller.dart';
 import 'package:havenote/features/entries/state/entries_providers.dart';
 import 'package:havenote/l10n/app_localizations.dart';
@@ -107,7 +109,17 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
               Expanded(child: TagField(controller: _tag, label: t.labelTag)),
             ],
           ),
-          const SizedBox(height: AppSizes.space),
+
+          // Existing images (edit mode)
+          if (widget.entryId != null) ...[
+            const SizedBox(height: AppSizes.space),
+            EditorExistingImages(entryId: widget.entryId!),
+          ],
+
+          // Images picker + thumbnails
+          EditorImages(),
+
+          const SizedBox(height: AppSizes.spaceLG),
           SizedBox(
             width: double.infinity,
             child: FilledButton.icon(

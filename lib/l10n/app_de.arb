@@ -80,5 +80,10 @@
   "labelEditEntry": "Eintrag bearbeiten",
   "labelUntitled": "Ohne Titel",
   "labelEntry": "Eintrag",
-  "tooltipEdit": "Bearbeiten"
+  "tooltipEdit": "Bearbeiten",
+  "labelAddImage": "Bilder hinzufügen",
+  "labelImages": "Bilder",
+  "labelImagesSaved": "Gespeicherte Bilder",
+  "labelImagesNew": "Neue Bilder",
+  "snackImageRemoved": "Bild entfernt"
 }
