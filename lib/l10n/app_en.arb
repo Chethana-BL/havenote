@@ -10,6 +10,7 @@
   "actionCancel": "Cancel",
   "actionDelete": "Delete",
   "actionConfirm": "Confirm",
+  "actionClear": "Clear",
   "actionShow": "Show",
   "actionHide": "Hide",
   "labelEmail": "Email",
@@ -85,5 +86,8 @@
   "labelImages": "Images",
   "labelImagesSaved" : "Saved images",
   "labelImagesNew" : "New images",
-  "snackImageRemoved" : "Image Removed"
+  "snackImageRemoved" : "Image Removed",
+  "emptySearchTitle": "No matching notes",
+  "emptySearchBody": "Try a different keyword.",
+  "hintSearch": "Search notes…"
 }

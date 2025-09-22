@@ -10,6 +10,7 @@
   "actionCancel": "Abbrechen",
   "actionDelete": "Löschen",
   "actionConfirm": "Bestätigen",
+  "actionClear": "Leeren",
   "actionShow": "Anzeigen",
   "actionHide": "Ausblenden",
   "labelEmail": "E-Mail",
@@ -85,5 +86,8 @@
   "labelImages": "Bilder",
   "labelImagesSaved": "Gespeicherte Bilder",
   "labelImagesNew": "Neue Bilder",
-  "snackImageRemoved": "Bild entfernt"
+  "snackImageRemoved": "Bild entfernt",
+  "emptySearchTitle": "Keine passenden Notizen",
+  "emptySearchBody": "Versuchen Sie ein anderes Stichwort.",
+  "hintSearch": "Notizen durchsuchen…"
 }

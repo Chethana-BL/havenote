@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 /// Global spacing/radius/icon sizes for the app
 class AppSizes {
   // Padding
@@ -29,6 +31,9 @@ class AppSizes {
 
   // Button height
   static const double buttonHeight = 48;
+
+  // Search field height
+  static const double searchFieldHeight = kToolbarHeight + space;
 
   // Other
   static const double dividerThickness = 1;
