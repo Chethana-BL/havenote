@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:havenote/app/constants/app_icons.dart';
 import 'package:havenote/app/constants/app_sizes.dart';
 import 'package:havenote/app/router/routes.dart';
+import 'package:havenote/features/entries/presentation/widgets/soft_delete_action.dart';
 import 'package:havenote/features/entries/state/entries_providers.dart';
 import 'package:havenote/features/entry_detail/presentation/widgets/entry_header.dart';
 import 'package:havenote/features/entry_detail/presentation/widgets/entry_images_grid.dart';
@@ -50,6 +51,7 @@ class EntryDetailScreen extends ConsumerWidget {
                         ? null
                         : () => context.push(AppRoute.editorEdit(entry.id)),
               ),
+              SoftDeleteRestoreAction(entryId: entry.id, deleted: deleted),
             ],
           ),
           body: ListView(

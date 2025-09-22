@@ -89,5 +89,12 @@
   "snackImageRemoved": "Bild entfernt",
   "emptySearchTitle": "Keine passenden Notizen",
   "emptySearchBody": "Versuchen Sie ein anderes Stichwort.",
-  "hintSearch": "Notizen durchsuchen…"
+  "hintSearch": "Notizen durchsuchen…",
+  "tooltipShowDeleted": "Gelöschte anzeigen",
+  "tooltipHideDeleted": "Gelöschte ausblenden",
+  "tooltipDelete": "Löschen",
+  "tooltipRestore": "Wiederherstellen",
+  "snackMovedToDeleted": "In \"Zuletzt gelöscht\" verschoben",
+  "snackRestored": "Wiederhergestellt",
+  "labelUndo": "Rückgängig"
 }

@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:havenote/app/constants/app_icons.dart';
 import 'package:havenote/app/constants/app_sizes.dart';
 import 'package:havenote/app/router/routes.dart';
-import 'package:havenote/features/entries/presentation/widgets/entry_card.dart';
+import 'package:havenote/features/entries/presentation/widgets/dismissible_entry.dart';
 import 'package:havenote/features/home/presentation/widgets/empty_states.dart';
 import 'package:havenote/features/home/presentation/widgets/home_search_field.dart';
 import 'package:havenote/features/home/state/home_filters.dart';
@@ -23,6 +23,18 @@ class HomeScreen extends ConsumerWidget {
       appBar: AppBar(
         title: Text(t.appTitle),
         actions: [
+          IconButton(
+            icon: Icon(
+              filters.showDeleted ? AppIcons.restore : AppIcons.delete,
+            ),
+            tooltip:
+                filters.showDeleted
+                    ? t.tooltipHideDeleted
+                    : t.tooltipShowDeleted,
+            onPressed:
+                () =>
+                    ref.read(homeFiltersProvider.notifier).toggleShowDeleted(),
+          ),
           IconButton(
             icon: const Icon(AppIcons.settings),
             onPressed: () => context.push(AppRoute.settings()),
@@ -51,7 +63,12 @@ class HomeScreen extends ConsumerWidget {
             separatorBuilder: (_, __) => const SizedBox(height: AppSizes.space),
             itemBuilder: (_, i) {
               final entry = entries[i];
-              return EntryCard(entry: entry);
+
+              return DismissibleEntry(
+                key: ValueKey(entry.id),
+                entry: entry,
+                showDeleted: filters.showDeleted,
+              );
             },
           );
         },

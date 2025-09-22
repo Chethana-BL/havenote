@@ -14,11 +14,12 @@ final entriesRepositoryProvider = Provider<IEntriesRepository>((ref) {
   );
 });
 
-/// Stream of entries
-final entriesStreamProvider = StreamProvider.autoDispose<List<Entry>>((ref) {
-  final repo = ref.watch(entriesRepositoryProvider);
-  return repo.watchEntries();
-});
+/// Stream of entries; pass `includeDeleted=true` to also receive soft-deleted.
+final entriesStreamProvider = StreamProvider.autoDispose
+    .family<List<Entry>, bool>((ref, includeDeleted) {
+      final repo = ref.watch(entriesRepositoryProvider);
+      return repo.watchEntries(includeDeleted: includeDeleted);
+    });
 
 /// Single entry by id (nullable if the doc is missing/deleted).
 final entryStreamProvider = StreamProvider.autoDispose.family<Entry?, String>((

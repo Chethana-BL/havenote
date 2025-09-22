@@ -40,6 +40,10 @@ String mapAuthError(Object error, S t) {
     case 'network-request-failed':
       return t.authErrorNetworkRequestFailed;
 
+    // case 'requires-recent-login':
+    // case 'user-mismatch': // reauth with a different user than current
+    //   return t.settingsDeleteRequiresReauthentication;
+
     // Account state
     case 'user-disabled':
       return t.authErrorUserDisabled;

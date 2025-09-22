@@ -3,19 +3,29 @@
 > Write daily entries, attach photos, tag moods — even offline. Data syncs when you’re back online.
 
 ## Overview
-**Havenote** is an offline-first personal journal:
-- Write daily entries, attach photos, tag moods.
-- Full offline support with automatic sync when online.
-- Cloud backup + device restore.
-- End-to-end encryption demo (local + Firestore).
+**Havenote** is personal journal. Write entries, add photos, and tag moods—everything works offline and syncs automatically when back online.
 
-Firebase used: **Auth**, **Firestore** (with offline persistence), **Storage**.
+- Entries with title/body, mood, tags
+- Add photos from gallery; images stored in Firebase Storage
+- Soft delete (Recently Deleted) with restore
+- Debounced search on Home; toggle to show/hide deleted
+- Clean Architecture + Riverpod + GoRouter
+- Material 3 theming (light/dark), EN/DE localization
+
+Firebase used: **Auth**, **Firestore** (offline persistence), **Storage**.
 
 ## Implemented so far
 - **Auth (email & password)**: sign up, sign in, sign out  
 - **Verify email**: resend + “I’ve verified” check  
 - **Forgot password**: reset link  
-- **Routing**: GoRouter with guarded routes; Splash handles first navigation  
+- **Routing**: GoRouter with guards; Splash handles first navigation
+- **Settings**: theme mode (system/light/dark), edit display name, sign out, delete account
+- **Entries**
+  - Repository: Firestore (offline-first), Storage for images
+  - Home: list of entries, **debounced search**, **show deleted** toggle
+  - List swipe: **soft delete/restore** with Undo snackbar
+  - Detail: title/body, mood, tags, **images grid**
+  - Editor: create/edit (title, body, mood, single tag), **pick & upload images**
 - **Architecture**: Clean Architecture + Riverpod providers  
 - **UI**: Sign In, Sign Up, Verify Email, Forgot Password, Home (placeholder card)  
 - **Theming**: Material 3 (light/dark)  

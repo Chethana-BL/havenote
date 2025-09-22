@@ -89,5 +89,12 @@
   "snackImageRemoved" : "Image Removed",
   "emptySearchTitle": "No matching notes",
   "emptySearchBody": "Try a different keyword.",
-  "hintSearch": "Search notes…"
+  "hintSearch": "Search notes…",
+  "tooltipShowDeleted": "Show deleted",
+  "tooltipHideDeleted": "Hide deleted",
+  "tooltipDelete": "Delete",
+  "tooltipRestore": "Restore",
+  "snackMovedToDeleted": "Moved to \"Recently Deleted\"",
+  "snackRestored": "Restored",
+  "labelUndo": "Undo"
 }
