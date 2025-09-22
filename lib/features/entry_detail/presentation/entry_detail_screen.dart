@@ -7,6 +7,7 @@ import 'package:havenote/app/constants/app_sizes.dart';
 import 'package:havenote/app/router/routes.dart';
 import 'package:havenote/features/entries/state/entries_providers.dart';
 import 'package:havenote/features/entry_detail/presentation/widgets/entry_header.dart';
+import 'package:havenote/features/entry_detail/presentation/widgets/entry_images_grid.dart';
 import 'package:havenote/l10n/app_localizations.dart';
 
 class EntryDetailScreen extends ConsumerWidget {
@@ -68,6 +69,17 @@ class EntryDetailScreen extends ConsumerWidget {
                   ),
                 ),
               ),
+
+              // Images section
+              if (entry.images.isNotEmpty) ...[
+                const SizedBox(height: AppSizes.spaceLG),
+                Text(
+                  t.labelImages,
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                const SizedBox(height: AppSizes.spaceSM),
+                EntryImagesGrid(entry: entry),
+              ],
             ],
           ),
         );

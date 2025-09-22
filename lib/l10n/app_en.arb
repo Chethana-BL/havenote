@@ -80,5 +80,10 @@
   "labelEditEntry" : "Edit Entry",
   "labelUntitled" : "Untitled",
   "labelEntry": "Entry",
-  "tooltipEdit": "Edit"
+  "tooltipEdit": "Edit",
+  "labelAddImage": "Add Images",
+  "labelImages": "Images",
+  "labelImagesSaved" : "Saved images",
+  "labelImagesNew" : "New images",
+  "snackImageRemoved" : "Image Removed"
 }
