@@ -28,11 +28,24 @@ class FirestoreEntriesRepository implements IEntriesRepository {
     return _db.collection('users').doc(uid).collection('entries');
   }
 
-  /// Stream of all entries
+  /// Stream of all entries, soft-deleted entries have `deletedAt` set.
+  /// Pass `includeDeleted=true` to also receive soft-deleted entries.
   @override
-  Stream<List<Entry>> watchEntries() {
+  Stream<List<Entry>> watchEntries({bool includeDeleted = false}) {
+    // Order by createdAt descending
     final q = _entriesCollection().orderBy('createdAt', descending: true);
-    return q.snapshots().map((s) => s.docs.map(Entry.fromDoc).toList());
+
+    // Listen to snapshots and convert to List<Entry>
+    return q.snapshots().map((s) {
+      final list = s.docs.map(Entry.fromDoc).toList(growable: false);
+
+      if (includeDeleted) {
+        return list; // Include all entries
+      } else {
+        // Filter out soft-deleted entries
+        return list.where((e) => e.deletedAt == null).toList(growable: false);
+      }
+    });
   }
 
   /// Stream of a single entry by id (nullable if the doc is missing/deleted).
@@ -125,6 +138,24 @@ class FirestoreEntriesRepository implements IEntriesRepository {
     // Remove image metadata from entry
     await _entriesCollection().doc(entryId).update({
       'images': FieldValue.arrayRemove([EntryImage(path: imagePath).toMap()]),
+      'updatedAt': FieldValue.serverTimestamp(),
+    });
+  }
+
+  /// Soft-deletes (sets `deletedAt` to server timestamp).
+  @override
+  Future<void> softDelete(String entryId) async {
+    await _entriesCollection().doc(entryId).update({
+      'deletedAt': FieldValue.serverTimestamp(),
+      'updatedAt': FieldValue.serverTimestamp(),
+    });
+  }
+
+  /// Restores a soft-deleted entry (sets `deletedAt` to null).
+  @override
+  Future<void> restore(String entryId) async {
+    await _entriesCollection().doc(entryId).update({
+      'deletedAt': null,
       'updatedAt': FieldValue.serverTimestamp(),
     });
   }

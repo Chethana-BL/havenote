@@ -4,7 +4,7 @@ import 'package:havenote/domain/entries/models/entry_image.dart';
 
 abstract class IEntriesRepository {
   /// Stream of all entries
-  Stream<List<Entry>> watchEntries();
+  Stream<List<Entry>> watchEntries({bool includeDeleted = false});
 
   /// Stream of a single entry by id (nullable if the doc is missing/deleted).
   Stream<Entry?> watchEntry(String id);
@@ -28,4 +28,10 @@ abstract class IEntriesRepository {
     required String entryId,
     required String imagePath,
   });
+
+  /// Soft-deletes (sets `deletedAt` to server timestamp).
+  Future<void> softDelete(String entryId);
+
+  /// Restores a soft-deleted entry (sets `deletedAt` to null).
+  Future<void> restore(String entryId);
 }

@@ -4,12 +4,16 @@ import 'package:havenote/features/entries/state/entries_providers.dart';
 
 /// UI-only state for the Home screen (search).
 class HomeFiltersState {
-  const HomeFiltersState({this.query = ''});
+  const HomeFiltersState({this.query = '', this.showDeleted = false});
 
   final String query;
+  final bool showDeleted;
 
-  HomeFiltersState copyWith({String? query}) {
-    return HomeFiltersState(query: query ?? this.query);
+  HomeFiltersState copyWith({String? query, bool? showDeleted}) {
+    return HomeFiltersState(
+      query: query ?? this.query,
+      showDeleted: showDeleted ?? this.showDeleted,
+    );
   }
 }
 
@@ -19,6 +23,9 @@ class HomeFiltersController extends StateNotifier<HomeFiltersState> {
 
   void setQuery(String value) =>
       state = state.copyWith(query: value.trim().toLowerCase());
+
+  void toggleShowDeleted() =>
+      state = state.copyWith(showDeleted: !state.showDeleted);
 }
 
 /// Provider for [HomeFiltersController] and its state.
@@ -32,14 +39,14 @@ final filteredEntriesProvider = Provider.autoDispose<AsyncValue<List<Entry>>>((
   ref,
 ) {
   final filters = ref.watch(homeFiltersProvider);
-  final entriesAsync = ref.watch(entriesStreamProvider);
+  final entriesAsync = ref.watch(entriesStreamProvider(filters.showDeleted));
 
   return entriesAsync.whenData((entries) {
     final q = filters.query;
     if (q.isEmpty) return entries;
 
     // Simple search: title or body contains the query (case insensitive).
-    // TODO(owner): improve with tags, mood, date, etc.
+    // TODO(Owner): improve with tags, mood, date, etc.
     return entries
         .where((e) => ('${e.title}\n${e.body}').toLowerCase().contains(q))
         .toList(growable: false);
