@@ -5,8 +5,9 @@ import 'package:havenote/app/constants/app_icons.dart';
 import 'package:havenote/app/constants/app_sizes.dart';
 import 'package:havenote/app/router/routes.dart';
 import 'package:havenote/features/entries/presentation/widgets/entry_card.dart';
-import 'package:havenote/features/entries/state/entries_providers.dart';
 import 'package:havenote/features/home/presentation/widgets/empty_states.dart';
+import 'package:havenote/features/home/presentation/widgets/home_search_field.dart';
+import 'package:havenote/features/home/state/home_filters.dart';
 import 'package:havenote/l10n/app_localizations.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -15,7 +16,8 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final t = S.of(context);
-    final entriesAsync = ref.watch(entriesStreamProvider);
+    final filters = ref.watch(homeFiltersProvider);
+    final entriesAsync = ref.watch(filteredEntriesProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -26,13 +28,22 @@ class HomeScreen extends ConsumerWidget {
             onPressed: () => context.push(AppRoute.settings()),
           ),
         ],
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(AppSizes.searchFieldHeight),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: AppSizes.padding),
+            child: HomeSearchField(),
+          ),
+        ),
       ),
       body: entriesAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) => Center(child: Text('${t.errorGeneric}: $e')),
         data: (entries) {
           if (entries.isEmpty) {
-            return const EmptyHomeState();
+            return filters.query.isEmpty
+                ? const EmptyHomeState()
+                : const EmptySearchState();
           }
           return ListView.separated(
             padding: const EdgeInsets.all(AppSizes.padding),
