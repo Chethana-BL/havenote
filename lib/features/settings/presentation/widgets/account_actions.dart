@@ -8,6 +8,7 @@ import 'package:havenote/app/utils/dialogs.dart';
 import 'package:havenote/core/logger.dart';
 import 'package:havenote/features/auth/state/auth_providers.dart';
 import 'package:havenote/features/auth/utils/auth_error_mapper.dart';
+import 'package:havenote/features/lock/state/lock_controller.dart';
 import 'package:havenote/l10n/app_localizations.dart';
 
 class AccountActions extends ConsumerWidget {
@@ -29,6 +30,9 @@ class AccountActions extends ConsumerWidget {
       if (ok == true) {
         Log.i('Settings: sign-out confirmed');
         await ref.read(authRepositoryProvider).signOut();
+        await ref
+            .read(lockControllerProvider.notifier)
+            .clearPersistentLockData();
       }
     }
 

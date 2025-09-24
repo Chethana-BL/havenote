@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:havenote/app/constants/app_sizes.dart';
+import 'package:havenote/features/lock/presentation/tiles/biometric_lock_tile.dart';
+import 'package:havenote/features/lock/presentation/tiles/pin_lock_tile.dart';
 import 'package:havenote/features/settings/presentation/widgets/account_actions.dart';
 import 'package:havenote/features/settings/presentation/widgets/profile_name_tile.dart';
 import 'package:havenote/features/settings/presentation/widgets/theme_mode_tile.dart';
@@ -21,6 +23,9 @@ class SettingsScreen extends StatelessWidget {
           SizedBox(height: AppSizes.spaceLG),
           Divider(),
           ThemeModeTile(),
+          Divider(),
+          BiometricLockTile(),
+          PinLockTile(),
           Divider(),
           AccountActions(),
           Divider(),
