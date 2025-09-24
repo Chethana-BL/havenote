@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:havenote/app/router/router.dart';
 import 'package:havenote/app/theme/theme.dart';
 import 'package:havenote/app/theme/theme_mode_provider.dart';
+import 'package:havenote/features/lock/presentation/lock_gate.dart';
 import 'package:havenote/l10n/app_localizations.dart';
 
 class HavenoteApp extends ConsumerWidget {
@@ -28,6 +29,7 @@ class HavenoteApp extends ConsumerWidget {
       darkTheme: AppTheme.dark(),
       themeMode: mode,
       routerConfig: router,
+      builder: (context, child) => LockGate(child: child ?? const SizedBox()),
     );
   }
 }

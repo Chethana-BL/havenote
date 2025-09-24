@@ -4,6 +4,7 @@ class AppIcons {
   // Auth
   static const email = Icons.email;
   static const fingerprint = Icons.fingerprint;
+  static const pin = Icons.pin;
   static const lock = Icons.lock;
   static const login = Icons.login;
   static const send = Icons.send;
