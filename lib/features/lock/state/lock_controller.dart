@@ -14,7 +14,7 @@ const _kLockPinEnabled = 'lock_pin_enabled';
 const _kLockPinValue = 'lock_pin_value';
 
 /// Controls lock state; tries biometrics first (if enabled & available), else PIN.
-/// TODO(security): PIN is stored in SharedPreferences for demo only; use secure storage + hashing in production.
+// TODO(security): PIN is stored in SharedPreferences, use secure storage + hashing in production.
 class LockController extends StateNotifier<LockState>
     with WidgetsBindingObserver {
   LockController()
